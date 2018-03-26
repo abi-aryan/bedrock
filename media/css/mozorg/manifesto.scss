@@ -16,6 +16,7 @@ $addendum-blue: #16AABF;
 .share-head,
 .share-paragraph {
     padding: 0 $mobile-content-padding;
+    max-width: 700px;
 
     @media #{$mq-tablet} {
         padding: 0 $tablet-content-padding;
@@ -43,7 +44,6 @@ Manifesto
 .manifesto-title {
     @include open-sans;
     @include font-size-level4;
-    color: $addendum-blue;
     margin-bottom: 15px;
 }
 
@@ -51,9 +51,9 @@ Manifesto
     @include font-size-level5;
     @include open-sans;
     color: $color-text-primary;
+    display: inline-block;
     font-weight: bold;
     text-decoration: none;
-    display: inline-block;
 
     &:after {
         @include background-size(14px, 24px);
@@ -67,7 +67,6 @@ Manifesto
         right: 0;
         transition: right 100ms ease-in-out;
         width: 14px;
-        background-size: 14px auto;
 
         html[dir="rtl"] & {
             margin-left: 0;
@@ -79,20 +78,19 @@ Manifesto
     &:link,
     &:visited {
         color: $color-text-primary;
-    }
 
-    &:hover,
-    &:focus,
-    &:active {
-        color: $color-link-hover;
-        text-decoration: underline;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-text-primary;
+            text-decoration: underline;
 
-        &:after {
-            background-position: 0 -13px;
-            right: -4px;
+            &:after {
+                right: -4px;
 
-            html[dir="rtl"] & {
-                right: 4px;
+                html[dir="rtl"] & {
+                    right: 4px;
+                }
             }
         }
     }
@@ -134,9 +132,9 @@ Addendum
     margin: 2em ($mobile-content-padding * 2) 0;
 
     @media #{$mq-tablet} {
+        margin-bottom: 2em;
         margin-left: ($tablet-content-padding * 2);
         margin-right: ($tablet-content-padding * 2);
-        margin-bottom: 2em;
     }
 
     @media #{$mq-desktop-wide} {
@@ -169,14 +167,14 @@ Addendum
         }
 
         &:before {
+            background-color: $color-text-primary;
             content: '';
             display: block;
+            height: 7px;
+            left: 0;
             position: absolute;
             top: 0;
-            left: 0;
-            height: 7px;
             width: 80px;
-            background-color: $addendum-blue;
         }
     }
 }
@@ -195,23 +193,23 @@ Share section
 .share-addendum {
     @include open-sans;
     background-color: #b9e5ec;
-    padding: ($mobile-content-padding * 2) 0;
     margin-bottom: $mobile-content-padding * 2;
+    padding: ($mobile-content-padding * 2) 0;
 
     @media #{$mq-tablet} {
-        padding: $tablet-content-padding 0;
         margin-bottom: 20px;
+        padding: $tablet-content-padding 0;
     }
 
     @media #{$mq-desktop} {
-        padding: $desktop-content-padding 0;
         margin-bottom: 55px;
+        padding: $desktop-content-padding 0;
     }
 }
 
 .share-button-outter {
-    text-align: center;
     margin: $mobile-content-padding 0 0 0;
+    text-align: center;
 
     @media #{$mq-tablet} {
         margin-top: 60px;
@@ -226,8 +224,8 @@ Share section
 a.button.button-manifesto {
     background-color: $addendum-blue;
     border-color: $addendum-blue;
-    position: relative;
     padding-left: 25px + 25px + 15px; // left padding + icon width + right padding
+    position: relative;
 
     html[dir="rtl"] & {
         padding-left: 40px;
@@ -237,8 +235,8 @@ a.button.button-manifesto {
     &:hover,
     &:focus,
     &:active {
-        border-color: darken(#149bae, 2%);
         background-color: darken(#149bae, 2%);
+        border-color: darken(#149bae, 2%);
     }
 
     &:before {
@@ -305,15 +303,10 @@ Principles
 .principle-number {
     @include font-size(20px);
     @include open-sans;
-    color: $addendum-blue;
     display: block;
     font-weight: bold;
     margin-bottom: 0.8em;
     text-decoration: none;
-
-    &:visited {
-        color: $addendum-blue;
-    }
 }
 
 .principle-header {
