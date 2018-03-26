@@ -46,22 +46,8 @@
   {% endif %}
 {% endblock %}
 
-{% set twitter_share_shorten_url = {
-  '01': '1o4BGY1',
-  '02': '1o4Cmwi',
-  '03': '1pHvACg',
-  '04': '1olpxj7',
-  '05': 'V8O1SM',
-  '06': 'TArZa0',
-  '07': '1mRltrl',
-  '08': 'TMI1Ox',
-  '09': '1xcEisc',
-  '10': '1z5HIPk',
-  'custom': '1iRxjCi',
-} %}
-
 {% macro twitter_link(content_id, text) -%}
-  {{ twitter_share_url('http://mzl.la/' + twitter_share_shorten_url[content_id], text|truncate(102, False, '…')) }}
+  {{ twitter_share_url('https://mzl.la/manifesto', text|truncate(102, False, '…')) }}
 {%- endmacro %}
 
 {% if l10n_has_tag('addendum_032018') %}
