@@ -358,7 +358,9 @@
         </section>
       </div>
       <footer class="content principles-foot">
-        <p><a class="button button-manifesto" href="{{ twitter_link('custom', _('I support the vision of a better, healthier internet from @mozilla, will you join me?')) }}">{{  _('Share on Twitter') }}</a></p>
+        {% if l10n_has_tag('addendum_032018') %}
+          <p><a class="button button-manifesto" href="{{ twitter_link('custom', _('I support the vision of a better, healthier internet from @mozilla, will you join me?')) }}">{{  _('Share on Twitter') }}</a></p>
+        {% endif %}
         <p><a class="manifesto-details" href="{{ url('mozorg.about.manifesto-details') }}">{{ _('Read the entire manifesto') }}</a></p>
       </footer>
     </section>
