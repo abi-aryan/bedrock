@@ -6,11 +6,9 @@ $(function() {
     'use strict';
 
     // Open Twitter in a sub window
-    var openTwitterSubwin = function (section, url) {
-
+    var openTwitterSubwin = function (url) {
         window.dataLayer.push({
-            'event': 'manifesto-quote-share',
-            'quote': $('#modal section').data('ga-quote')
+            'event': 'manifesto-share'
         });
 
         var width = 550;
@@ -30,32 +28,18 @@ $(function() {
     };
 
     // Set up link handler
-    $(document).on('click', '.principle a', function (event) {
+    $(document).on('click', 'article a', function (event) {
         var $this = $(this);
-        var section = $this.parents('.principle').attr('id').match(/\d+/)[0];
         var href = $this.attr('href');
-        var action;
 
-        if ($this.hasClass('tweet')) {
+        if ($this.hasClass('button-manifesto')) {
             // Open Twitter in a sub window
             event.preventDefault();
-            openTwitterSubwin(section, href);
-        } else if ($this.hasClass('principle-number')) {
-            // nothing
+            openTwitterSubwin(href);
         } else {
-            // Open the link in a new tab
-            $this.attr({
-                'target': '_blank',
-                'rel': 'noopener noreferrer'
-            });
-
-            action = href.match(/youtube/) ? 'video link click'
-                                           : 'link click';
-
             window.dataLayer.push({
                 'event': 'manifesto-interaction',
-                'browserAction': action,
-                'section': $this.parents('.principle').data('ga-quote')
+                'browserAction': 'link click'
             });
         }
     });

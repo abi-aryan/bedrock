@@ -101,28 +101,26 @@
 {% block content %}
 <main role="main" itemscope itemtype="http://schema.org/Article">
   <article role="article" itemprop="articleBody">
-  {% if switch('manifesto-addendum') %}
-    {% if l10n_has_tag('addendum_032018') %}
-      <header>
-        <h1 itemprop="name" class="manifesto-title manifesto-title-addendum">{{ self.page_title() }}</h1>
-      </header>
-      <section>
-        <h2 class="addendum-subtitle">{{ _('Pledge for a Healthy Internet') }}</h2>
-        <p class="addendum-paragraph">{{ _('The open, global internet is the most powerful communication and collaboration resource we have ever seen. It embodies some of our deepest hopes for human progress. It enables new opportunities for learning, building a sense of shared humanity, and solving the pressing problems facing people everywhere.') }}</p>
-        <p class="addendum-paragraph">{{ _('Over the last decade we have seen this promise fulfilled in many ways. We have also seen the power of the internet used to magnify divisiveness, incite violence, promote hatred, and intentionally manipulate fact and reality. We have learned that we should more explicitly set out our aspirations for the human experience of the internet. We do so now.') }}</p>
-        <ol class="addendum-list">
-          <li>{{ _('We are committed to an internet that includes all the peoples of the earth — where a person’s demographic characteristics do not determine their online access, opportunities, or quality of experience.') }}</li>
-          <li>{{ _('We are committed to an internet that promotes civil discourse, human dignity, and individual expression.') }}</li>
-          <li>{{ _('We are committed to an internet that elevates critical thinking, reasoned argument, shared knowledge, and verifiable facts. ') }}</li>
-          <li>{{ _('We are committed to an internet that catalyzes collaboration among diverse communities working together for the common good. ') }}</li>
-        </ol>
-        <div class="share-addendum">
-          <h2 class="share-head">{{ _('Show Your Support') }}</h2>
-          <p class="share-paragraph">{{ _('An internet with these qualities will not come to life on its own. Individuals and organizations must embed these aspirations into internet technology and into the human experience with the internet. The Mozilla Manifesto and Addendum represent Mozilla’s commitment to advancing these aspirations. We aim to work together with people and organizations everywhere who share these goals to make the internet an even better place for everyone.') }}</p>
-          <p class="share-button-outter"><a class="button button-manifesto" href="{{ twitter_link('custom', _('I support the vision of a better, healthier internet from @mozilla, will you join me?')) }}">{{  _('Share on Twitter') }}</a></p>
-        </div>
-      </section>
-    {% endif %}
+  {% if switch('manifesto-addendum') and l10n_has_tag('addendum_032018') %}
+    <header>
+      <h1 itemprop="name" class="manifesto-title manifesto-title-addendum">{{ self.page_title() }}</h1>
+    </header>
+    <section>
+      <h2 class="addendum-subtitle">{{ _('Pledge for a Healthy Internet') }}</h2>
+      <p class="addendum-paragraph">{{ _('The open, global internet is the most powerful communication and collaboration resource we have ever seen. It embodies some of our deepest hopes for human progress. It enables new opportunities for learning, building a sense of shared humanity, and solving the pressing problems facing people everywhere.') }}</p>
+      <p class="addendum-paragraph">{{ _('Over the last decade we have seen this promise fulfilled in many ways. We have also seen the power of the internet used to magnify divisiveness, incite violence, promote hatred, and intentionally manipulate fact and reality. We have learned that we should more explicitly set out our aspirations for the human experience of the internet. We do so now.') }}</p>
+      <ol class="addendum-list">
+        <li>{{ _('We are committed to an internet that includes all the peoples of the earth — where a person’s demographic characteristics do not determine their online access, opportunities, or quality of experience.') }}</li>
+        <li>{{ _('We are committed to an internet that promotes civil discourse, human dignity, and individual expression.') }}</li>
+        <li>{{ _('We are committed to an internet that elevates critical thinking, reasoned argument, shared knowledge, and verifiable facts. ') }}</li>
+        <li>{{ _('We are committed to an internet that catalyzes collaboration among diverse communities working together for the common good. ') }}</li>
+      </ol>
+      <div class="share-addendum">
+        <h2 class="share-head">{{ _('Show Your Support') }}</h2>
+        <p class="share-paragraph">{{ _('An internet with these qualities will not come to life on its own. Individuals and organizations must embed these aspirations into internet technology and into the human experience with the internet. The Mozilla Manifesto and Addendum represent Mozilla’s commitment to advancing these aspirations. We aim to work together with people and organizations everywhere who share these goals to make the internet an even better place for everyone.') }}</p>
+        <p class="share-button-outter"><a class="button button-manifesto" href="{{ twitter_link('custom', _('I support the vision of a better, healthier internet from @mozilla, will you join me?')) }}">{{  _('Share on Twitter') }}</a></p>
+      </div>
+    </section>
   {% endif %}
     <section id="sec-principles">
       <header class="content principles-header">
